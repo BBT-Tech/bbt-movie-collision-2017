@@ -2,7 +2,7 @@
 
 ### 1. 提交报名数据
 
-- 路径： /api/upload.php
+- 路径： ./api/upload.php
 
 - 方法： POST
 
@@ -40,7 +40,7 @@
 
 ### 2. 匹配结果查询
 
-- 路径： /api/feedback.php
+- 路径： ./api/feedback.php
 
 - 方法： POST
 
