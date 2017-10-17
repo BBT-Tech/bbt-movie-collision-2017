@@ -1,0 +1,214 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Microsoft Yahei';
+  overflow: hidden;
+}
+body {
+  background-image: url(../img/bg.jpg);
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.word {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/word.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 250px;
+}
+h3 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: normal;
+}
+h3 small {
+  font-size: 18px;
+  margin-left: 12px;
+}
+.main-frame {
+  max-height: 92%;
+  overflow-y: auto;
+  border-radius: 15px;
+  background-color: #fff;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  position: relative;
+}
+.main-frame .main-body {
+  width: 230px;
+  padding: 40px 40px;
+}
+.main-frame .main-body .main-info {
+  font-size: 15px;
+  margin: 10px 0 32px;
+}
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+}
+select > option:first-of-type {
+  display: none;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.form-info {
+  margin: 20px 0;
+  position: relative;
+  font-size: 18px;
+  color: #333;
+}
+.form-info .info-input {
+  margin-left: 12px;
+  width: 180px;
+  font-size: 17.5px;
+  color: #777;
+  border: none;
+  outline: none;
+}
+.form-info input.info-input {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+.form-info input.info-input[name=wechat] {
+  width: 140px;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+}
+.form-info .info-tip {
+  position: absolute;
+  left: 52px;
+  top: 22px;
+  font-size: 14px;
+  color: #a20a0a;
+}
+.form-info.wrong .info-title {
+  color: #a20a0a;
+}
+.form-like select {
+  font-size: 18px;
+  width: 100%;
+  color: #777;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.form-like .like-tip {
+  margin-top: 16px;
+  font-size: 15px;
+  color: #333;
+}
+.form-like .like-tip a {
+  color: #333;
+}
+.form-game .game-title {
+  margin: 30px 0 21px;
+  font-size: 17px;
+  line-height: 28px;
+}
+.form-game .game-options {
+  font-size: 17px;
+}
+.form-game .game-options > div {
+  display: inline-block;
+  margin-bottom: 9px;
+  cursor: pointer;
+}
+.form-game .game-options > div > span {
+  display: inline-block;
+  width: 23px;
+}
+.form-game .game-options .option-underline {
+  width: 0;
+  margin-top: 1px;
+  border-bottom: 1px solid #000;
+  transition-property: width;
+  transition-duration: 0.2s;
+}
+.form-result .like-tip {
+  font-size: 17px;
+}
+.form-result .select-frame {
+  width: 93px;
+  margin: 22px auto 0;
+}
+.form-result .select-frame select {
+  width: 100%;
+  font-size: 20px;
+  color: #777;
+  border: none;
+  outline: none;
+}
+.form-end {
+  font-size: 18px;
+  line-height: 32px;
+  margin-top: 28px;
+  margin-bottom: -4px;
+}
+.form-submit {
+  margin: 48px 0 20px;
+  text-align: center;
+}
+.form-submit .grounded-radiants {
+  display: inline-block;
+  position: relative;
+  border-radius: 22px;
+  background: linear-gradient(to top right, #dd48cb, #4a7dff);
+  padding: 2px;
+  z-index: 0;
+}
+.form-submit .grounded-radiants::after {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+  right: 1px;
+  background-color: #fff;
+  content: '';
+  border-radius: 22px;
+  z-index: -1;
+}
+.form-submit button {
+  cursor: pointer;
+  width: 130px;
+  height: 40px;
+  background: none;
+  outline: none;
+  font-size: 18px;
+  border: none;
+  background-image: linear-gradient(to top right, #dd48cb, #4a7dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.progress-frame {
+  margin-bottom: 42px;
+  width: 310px;
+}
+.progress-frame .progress {
+  height: 1px;
+  background: linear-gradient(to right, #c92870, #9f28cb, #7824cb, #5c24c7, #2b5cc6, #2abdb7);
+  width: 0%;
+  transition-property: width;
+  transition-duration: 0.3s;
+}
