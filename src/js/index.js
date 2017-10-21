@@ -389,6 +389,7 @@
 			var frame = $(".card-fly");
 			frame.find(".main-info").css("display", "none");
 			frame.find(".progress-frame").css("display", "none");
+			frame.find(".form-submit").css("display", "");
 			frame.find(".form-submit button").html("领取印花");
 			frame.find(".main-body h3").html("提交成功");
 			frame.find(".form-body").html($("#t-form-end").html());
