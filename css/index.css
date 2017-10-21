@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   height: 100%;
+  width: 100%;
   font-family: 'Microsoft Yahei';
   overflow: hidden;
 }
@@ -20,6 +21,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .word {
   position: fixed;
@@ -41,14 +45,26 @@ h3 small {
   font-size: 18px;
   margin-left: 12px;
 }
+.card-fly.main-frame {
+  position: absolute;
+  top: 50%;
+  left: 150%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition-duration: 0.5s;
+  transition-property: left;
+}
+.card-static.main-frame {
+  transition-property: opacity,left;
+  transition-duration: 0.5s;
+  left: 0%;
+}
 .main-frame {
   max-height: 92%;
   overflow-y: auto;
   border-radius: 15px;
   background-color: #fff;
   opacity: 0;
-  transition-property: opacity;
-  transition-duration: 0.3s;
   position: relative;
 }
 .main-frame .main-body {
@@ -57,7 +73,12 @@ h3 small {
 }
 .main-frame .main-body .main-info {
   font-size: 15px;
-  margin: 10px 0 32px;
+  margin: 2px 0 32px;
+}
+input,
+select {
+  padding-left: 0;
+  padding-right: 0;
 }
 select {
   -webkit-appearance: none;
@@ -77,26 +98,24 @@ select > option:first-of-type {
   font-size: 18px;
   color: #333;
 }
+.form-info .info-title {
+  vertical-align: middle;
+}
 .form-info .info-input {
-  margin-left: 12px;
-  width: 180px;
+  width: 160px;
   font-size: 17.5px;
   color: #777;
   border: none;
   outline: none;
-}
-.form-info input.info-input {
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
+  margin-left: 12px;
+  vertical-align: middle;
 }
 .form-info input.info-input[name=wechat] {
-  width: 140px;
-  -webkit-transform: translateY(-1px);
-          transform: translateY(-1px);
+  width: 120px;
 }
 .form-info .info-tip {
   position: absolute;
-  left: 52px;
+  left: 48px;
   top: 22px;
   font-size: 14px;
   color: #a20a0a;
@@ -122,6 +141,11 @@ select > option:first-of-type {
 .form-like .like-tip a {
   color: #333;
 }
+.form-error .error-404 {
+  margin: 30px 0 21px;
+  font-size: 17px;
+  line-height: 28px;
+}
 .form-game .game-title {
   margin: 30px 0 21px;
   font-size: 17px;
@@ -134,23 +158,33 @@ select > option:first-of-type {
   display: inline-block;
   margin-bottom: 9px;
   cursor: pointer;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+  vertical-align: middle;
 }
-.form-game .game-options > div > span {
+.form-game .game-options > div > .quesmark {
   display: inline-block;
+  vertical-align: middle;
   width: 23px;
 }
-.form-game .game-options .option-underline {
-  width: 0;
-  margin-top: 1px;
-  border-bottom: 1px solid #000;
-  transition-property: width;
-  transition-duration: 0.2s;
+.form-game .game-options > div > .questext {
+  vertical-align: middle;
+}
+.form-game .game-options > div > .quesimg {
+  vertical-align: middle;
+  width: 132px;
+  height: 88px;
+  display: inline-block;
+  margin-left: 23px;
+  background-position: center;
+  background-size: cover;
 }
 .form-result .like-tip {
   font-size: 17px;
 }
 .form-result .select-frame {
-  width: 93px;
+  width: 95px;
   margin: 22px auto 0;
 }
 .form-result .select-frame select {
@@ -190,6 +224,7 @@ select > option:first-of-type {
   z-index: -1;
 }
 .form-submit button {
+  color: #8c5fdb;
   cursor: pointer;
   width: 130px;
   height: 40px;
@@ -197,9 +232,16 @@ select > option:first-of-type {
   outline: none;
   font-size: 18px;
   border: none;
-  background-image: linear-gradient(to top right, #dd48cb, #4a7dff);
+  -webkit-transform: translate3d(0, 0, 1px);
+  transform: translate3d(0, 0, 1px);
+  background-image: -webkit-gradient(linear, 0% 100%, 100% 0%, from(#dd48cb), to(#4a7dff));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.form-submit button.button-ios {
+  background-image: initial;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
 }
 .progress-frame {
   margin-bottom: 42px;

@@ -4,11 +4,27 @@
 	<meta charset="UTF-8">
 	<title>电影对对碰 &copy;2017</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="./css/index.css?<?php echo filemtime('./css/index.css'); ?>">
+	<link rel="stylesheet" type="text/css" href="./css/index.min.css">
 </head>
 <body>
 	<div class="word"></div>
-	<div class="main-frame">
+	<div class="main-frame card-static">
+		<div class="main-body">
+			<h3><small></small></h3>
+			<div class="main-info"></div>
+			<form class="main-form" onsubmit="return false">
+				<div class="form-header"></div>
+				<div class="form-body"></div>
+				<div class="form-submit">
+					<div class="grounded-radiants"><button>下一步</button></div>
+				</div>
+			</form>
+		</div>
+		<div class="progress-frame">
+			<div class="progress"></div>
+		</div>
+	</div>
+	<div class="main-frame card-fly" style="visibility: hidden;">
 		<div class="main-body">
 			<h3><small></small></h3>
 			<div class="main-info"></div>
@@ -61,7 +77,7 @@
 		<p>同时恭喜你获得印花一枚，马上领取吧</p>
 	</div>
 </script>
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="./js/index.js?<?php echo filemtime('./js/index.js'); ?>"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="./js/index.min.js"></script>
 </body>
 </html>
