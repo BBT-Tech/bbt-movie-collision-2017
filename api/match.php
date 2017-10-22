@@ -17,7 +17,10 @@ for ($i = 0;$i < 5;++$i){
 }
 
 //时间检测
-if ($current > $feedback_begin || $current < $update_end) echo '时间错误，匹配退出';
+if ($current > $feedback_begin || $current < $update_end) {
+    echo '时间错误，匹配退出';
+    exit(0);
+}
 
 try{
     $sql_str = "SELECT * FROM `complete`";
