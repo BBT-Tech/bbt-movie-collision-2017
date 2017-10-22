@@ -54,6 +54,15 @@
 				'<div class="error-text">很遗憾，本次结果查询服务已经结束了，记得下次早点来哦୧(﹒︠ᴗ﹒︡)୨</div>'+
 			'</div>');
 			return;
+		} else if (a < 0) {
+			$(".card-static .progress-frame").css("display", "none");
+			$(".card-static .form-submit").css("display", "none");
+			$(".card-static .main-info").css("display", "none");
+			$(".card-static h3").html("查询未开始");
+			$(".card-static .form-body").html('<div class="form-error">'+
+				'<div class="error-text">结果查询服务还未开始，开始时间是2017年10月28日中午12点哦୧(﹒︠ᴗ﹒︡)୨</div>'+
+			'</div>');
+			return;
 		}
 		$("form [name=tel]").on('input', function() {
 			$(this.parentNode).removeClass("wrong").find(".info-tip").html("");
