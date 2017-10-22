@@ -3,8 +3,17 @@
 	var submit = (function() {
 		var _submit;
 		$("form").submit(function() {
-			if (_submit)
-				_submit();
+			if (_submit) {
+				var is = true;
+				$(".card-static [required]").each(function() {
+					if (this.value == "")
+						is = false;
+				});
+				if (is)
+					_submit();
+				else
+					alert("请填写所有项");
+			}
 		});
 		return function(e) {
 			_submit = e;
@@ -137,7 +146,7 @@
 						], value: Submit.school },
 						{ name: "college", title: "学院", value: Submit.college },
 						{ name: "grade", title: "年级", select: ["",
-							"大一", "大二", "大三", "大四" 
+							"大一", "大二", "大三", "大四", "研一", "研二", "研三"
 						], value: Submit.grade },
 						{ name: "wechat", title: "微信 选填", required: false, value: Submit.wechat }
 					]);
@@ -363,7 +372,7 @@
 				gender: Submit.gender,
 				school: Submit.school,
 				college: Submit.college,
-				grade: {"大一":1,"大二":2,"大三":3,"大四":4}[Submit.grade],
+				grade: {"大一":1,"大二":2,"大三":3,"大四":4,"研一":5,"研二":6,"研三":7}[Submit.grade],
 				tel: Submit.tel,
 				wechat: Submit.wechat,
 				like: Submit.like,

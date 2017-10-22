@@ -55,14 +55,14 @@
 			'</div>');
 			return;
 		} else if (a < 0) {
-			$(".card-static .progress-frame").css("display", "none");
-			$(".card-static .form-submit").css("display", "none");
-			$(".card-static .main-info").css("display", "none");
-			$(".card-static h3").html("查询未开始");
-			$(".card-static .form-body").html('<div class="form-error">'+
-				'<div class="error-text">结果查询服务还未开始，开始时间是2017年10月28日中午12点哦୧(﹒︠ᴗ﹒︡)୨</div>'+
-			'</div>');
-			return;
+			// $(".card-static .progress-frame").css("display", "none");
+			// $(".card-static .form-submit").css("display", "none");
+			// $(".card-static .main-info").css("display", "none");
+			// $(".card-static h3").html("查询未开始");
+			// $(".card-static .form-body").html('<div class="form-error">'+
+			// 	'<div class="error-text">结果查询服务还未开始，开始时间是2017年10月28日中午12点哦୧(﹒︠ᴗ﹒︡)୨</div>'+
+			// '</div>');
+			// return;
 		}
 		$("form [name=tel]").on('input', function() {
 			$(this.parentNode).removeClass("wrong").find(".info-tip").html("");
@@ -88,7 +88,7 @@
 						$(".card-fly .form-body").html($("#t-error-404").html());
 						break;
 					case 0:
-						d.data.grade = ["大一", "大二", "大三", "大四"][d.data.grade-1];
+						d.data.grade = ["大一", "大二", "大三", "大四", "研一", "研二", "研三"][d.data.grade-1];
 						Object.keys(d.data).forEach(function(i) {
 							$("[data-name="+i+"] .info-input").html(d.data[i]);
 						});
