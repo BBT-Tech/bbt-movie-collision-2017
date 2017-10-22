@@ -19,3 +19,14 @@ $schools = ['华南理工大学大学城校区','华南理工大学五山校区'
     '广东外语外贸大学','广州中医药大学','广东药学院','广州大学','广州美术学院','星海音乐学院'];
 $likes = ['喜剧爱情','惊悚悬疑','科幻动作','动画','剧情'];
 
+$update_end = '2017-10-26 23:59:59';
+$feedback_begin = '2017-10-28 12:00:00';
+$feedback_end = '2017-11-12 00:00:00';
+
+date_default_timezone_set('Asia/Shanghai');
+$current = strtotime(date("Y-m-d H:i:s"));
+$update_end = strtotime($update_end);
+$feedback_begin = strtotime($feedback_begin);
+$feedback_end = strtotime($feedback_end);
+
+

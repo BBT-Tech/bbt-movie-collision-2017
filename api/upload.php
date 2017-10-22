@@ -4,6 +4,8 @@ header("Content-Type: application/json");
 require_once "config.php";
 require_once  "connect_init.php";
 
+if ($current > $updata_end) output(100, '活动报名已经结束');
+
 $data_to_insert = null;
 
 if (isset($_POST['name'])){
