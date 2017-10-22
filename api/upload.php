@@ -32,7 +32,7 @@ if (isset($_POST['school'])){
     if (in_array($_POST['school'],$schools)) {
         $data_to_insert['school'] = htmlspecialchars($_POST['school']);
     }
-    else output(403,"gender数据不规范");
+    else output(403,"school数据不规范");
 }
 else output(500,"服务器错误,没有接收到school");
 
