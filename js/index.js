@@ -62,7 +62,7 @@
 	}
 
 	var FormInfo = {
-		preinit: function() {
+		preinit: function(nonext) {
 			setTimeout(function() {
 				$(".main-frame").css("opacity", "0.95");
 				setTimeout(function() {
@@ -70,7 +70,8 @@
 					$(".progress").css("width", "33.3%");
 				}, 200);
 			}, 1000);
-			FormInfo.init();
+			if (!nonext)
+				FormInfo.init();
 		},
 		init: function(step) {
 			FormInfo.step = step || 1;
@@ -401,12 +402,48 @@
 		}
 	}
 
-	$(window).on('load', function() {
-		FormInfo.preinit();
-		setTimeout(function() {
-			// Game.init();
-		}, 2000);
-	});
 	if (!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/))
 		$("button").addClass("button-ios");
+	$(window).on('load', function() {
+		var time_cmp = function(now, time) {
+			var cmp = function(a, b) {
+				if (a > b) return 1;
+				if (a < b) return -1;
+				return 0;
+			}
+			var t;
+			if (t = cmp(now.getFullYear(), time[0]))
+				return t;
+			if (t = cmp(now.getMonth()+1, time[1]))
+				return t;
+			if (t = cmp(now.getDate(), time[2]))
+				return t;
+			if (t = cmp(now.getHours(), time[3]))
+				return t;
+			if (t = cmp(now.getMinutes(), time[4]))
+				return t;
+			if (t = cmp(now.getSeconds(), time[5]))
+				return t;
+			return 0;
+		}
+		var now = new Date();
+		var a = time_cmp(now, [2017, 10, 24, 0, 0]);
+		var b = time_cmp(now, [2017, 10, 27, 0, 0]);
+		if (a >= 0 && b < 0)
+			FormInfo.preinit();
+		else {
+			if (b >= 0) {
+				FormInfo.preinit(true);
+				$(".card-static .progress-frame").css("display", "none");
+				$(".card-static .form-submit").css("display", "none");
+				$(".card-static .main-info").css("display", "none");
+				$(".card-static h3").html("报名已结束");
+				$(".card-static .form-body").html('<div class="form-error">'+
+					'<div class="error-text">很遗憾，本次报名已经结束了，下次早点来吧୧(﹒︠ᴗ﹒︡)୨</div>'+
+				'</div>');
+			} else {
+				FormInfo.preinit();
+			}
+		}
+	});
 })();

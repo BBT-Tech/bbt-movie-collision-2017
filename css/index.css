@@ -141,8 +141,8 @@ select > option:first-of-type {
 .form-like .like-tip a {
   color: #333;
 }
-.form-error .error-404 {
-  margin: 30px 0 21px;
+.form-error .error-text {
+  margin: 20px 0 21px;
   font-size: 17px;
   line-height: 28px;
 }
