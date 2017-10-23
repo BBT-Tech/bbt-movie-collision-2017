@@ -14,7 +14,7 @@ function data_change($data_to_change){
     return $data;
 }
 
-//if ($current < $feedback_begin) output(100, '查询还没有开始呢');
+if ($current < $feedback_begin) output(100, '查询还没有开始呢');
 if ($current > $feedback_end) output(100,'活动已经结束了，欢迎下次再来');
 
 if (isset($_POST['name']) && isset($_POST['tel'])){

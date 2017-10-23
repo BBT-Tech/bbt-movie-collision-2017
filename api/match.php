@@ -12,10 +12,10 @@ require_once "connect_init.php";
 
 
 //时间检测
-//if ($current > $feedback_begin || $current < $update_end) {
-//    echo '时间错误，匹配退出';
-//    exit(0);
-//}
+if ($current > $feedback_begin || $current < $update_end) {
+    echo '时间错误，匹配退出';
+    exit(0);
+}
 
 $match = array();
 $length = 0;
