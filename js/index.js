@@ -411,8 +411,15 @@
 		}
 	}
 
-	if (!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/))
+	if (!/micromessenger/.test(navigator.userAgent.toLowerCase())) {
+		alert("本次活动仅支持微信浏览器，请用微信浏览器打开本页");
+		$(".word").html('<div style="color: white">本次活动仅支持微信浏览器，<br>请用微信浏览器打开本页</div>');
+		return;
+	}
+	if (!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+		|| /windowswechat/.test(navigator.userAgent.toLowerCase())) {
 		$("button").addClass("button-ios");
+	}
 	$(window).on('load', function() {
 		var time_cmp = function(now, time) {
 			var cmp = function(a, b) {

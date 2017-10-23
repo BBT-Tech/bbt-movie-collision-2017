@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var LessAutoprefix = require('less-plugin-autoprefix');
-var autoprefix = new LessAutoprefix();
+var autoprefix = new LessAutoprefix({browsers: ["last 2 versions"]});
 // var browserSync = require('browser-sync').create();
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
