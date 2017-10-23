@@ -53,7 +53,7 @@ if (isset($_POST['grade'])){
 else output(500,"服务器错误,没有接收到grade");
 
 if (isset($_POST['tel'])){
-    if (preg_match('/1[3,5,7,8]\d{9}/U',$_POST['tel'])) {
+    if (preg_match('/1\d{10}/U',$_POST['tel'])) {
         $data_to_insert['tel'] = htmlspecialchars($_POST['tel']);
     }
     else output(403,"tel数据不规范");
