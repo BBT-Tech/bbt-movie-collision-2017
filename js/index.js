@@ -4,15 +4,7 @@
 		var _submit;
 		$("form").submit(function() {
 			if (_submit) {
-				var is = true;
-				$(".card-static [required]").each(function() {
-					if (this.value == "")
-						is = false;
-				});
-				if (is)
-					_submit();
-				else
-					alert("请填写所有项");
+				_submit();
 			}
 		});
 		return function(e) {
@@ -367,7 +359,7 @@
 			Submit.loading = true;
 			Submit.button = $(".card-static button").html();
 			$(".card-static button").html("提交中...");
-			$.post("./api/upload.php", {
+			var postdata = {
 				name: Submit.name,
 				gender: Submit.gender,
 				school: Submit.school,
@@ -375,8 +367,10 @@
 				grade: {"大一":1,"大二":2,"大三":3,"大四":4,"研一":5,"研二":6,"研三":7}[Submit.grade],
 				tel: Submit.tel,
 				wechat: Submit.wechat,
-				like: Submit.like,
-			}).done(function(d) {
+				like: Submit.like
+			}
+			// alert(JSON.stringify(postdata));
+			$.post("./api/upload.php", postdata).done(function(d) {
 				if (d.err) {
 					Submit.loading = false;
 					$(".card-static button").html(Submit.button);

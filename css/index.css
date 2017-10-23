@@ -31,7 +31,6 @@ body {
   background-image: url(../img/word.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 250px;
 }
 h3 {
   margin: 0;
@@ -81,9 +80,6 @@ select {
      -moz-appearance: none;
           appearance: none;
   background: transparent;
-}
-select > option:first-of-type {
-  display: none;
 }
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
