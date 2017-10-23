@@ -43,7 +43,6 @@ try{
 
 for ($i = 0;$i<$length;++$i){
     $num = -1;
-//    var_dump($arrays[$i]['gender']);
     if ($arrays[$i]['gender'] == '0') {
         array_push($girls,[$arrays[$i]['name'],$arrays[$i]['id']]);
         $num = count($girls) - 1;
@@ -53,7 +52,8 @@ for ($i = 0;$i<$length;++$i){
         $num = count($boys) - 1;
     }
 
-    $match[array_search($arrays[$i]['like'],$likes)][$arrays[$i]['gender']][$arrays[$i]['grade']] = array();
+    if (!isset($match[array_search($arrays[$i]['like'],$likes)] [$arrays[$i]['gender']] [$arrays[$i]['grade']]))
+        $match[array_search($arrays[$i]['like'],$likes)] [$arrays[$i]['gender']] [$arrays[$i]['grade']] = array();
     array_push($match[array_search($arrays[$i]['like'],$likes)][$arrays[$i]['gender']][$arrays[$i]['grade']],
         [$arrays[$i]['name'],$arrays[$i]['id'],$num]);
 }
@@ -91,8 +91,7 @@ for ($num = 0; $num < count($boys); ++$num){
         alter($boys[$num][1], 1, $girls[$f[$num]][0], $girls[$f[$num]][1]);
     }
 }
-echo "匹配成功"."总人数".count($arrays)."匹配人数".$ans * 2;
-print_r($line);
+echo "匹配成功  "."总人数".count($arrays)."匹配人数".$ans * 2;
 
 function find($u){    //$u为girl
     global $f,$line,$boys,$used;
